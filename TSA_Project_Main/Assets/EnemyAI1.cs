@@ -41,6 +41,7 @@ public class EnemyAI1 : MonoBehaviour {
 				//Script and variable name need to be changed based on what is in the final script
 				//Instantiate(magic);
 
+
 		float rotation = transform.eulerAngles.z;
 		if (rotation > 0)
 		{
