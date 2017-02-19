@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &97500616
 RectTransform:
   m_ObjectHideFlags: 0
@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 158628522}
   - component: {fileID: 158628521}
   - component: {fileID: 158628523}
+  - component: {fileID: 158628525}
   - component: {fileID: 158628524}
   m_Layer: 0
   m_Name: serf-right-still
@@ -380,18 +381,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef374c808f345afa1cec6bb4240233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &158628524
-BoxCollider:
+--- !u!61 &158628524
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 158628520}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.64, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.4, y: 0.64}
+--- !u!50 &158628525
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 158628520}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &209246506
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +668,8 @@ GameObject:
   - component: {fileID: 1011092447}
   - component: {fileID: 1011092446}
   - component: {fileID: 1011092449}
+  - component: {fileID: 1011092448}
+  - component: {fileID: 1011092450}
   m_Layer: 0
   m_Name: serf-left-move-1
   m_TagString: Enemy
@@ -700,6 +725,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1011092448
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1011092445}
+  m_BodyType: 0
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &1011092449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,6 +756,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7ff1daf319d4f7394e26a5e29abd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1011092450
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1011092445}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.48000005, y: 0.69}
 --- !u!1 &1323435361
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1885878447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +935,7 @@ GameObject:
   - component: {fileID: 1994391237}
   - component: {fileID: 1994391236}
   - component: {fileID: 1994391238}
+  - component: {fileID: 1994391240}
   - component: {fileID: 1994391239}
   m_Layer: 0
   m_Name: Vendor
@@ -943,8 +1003,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f745708d5af44f4e89384abfbae8ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 97500615}
---- !u!50 &1994391239
+  Canvas: {fileID: 1885878449}
+--- !u!61 &1994391239
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1994391235}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.39, y: 0.61}
+--- !u!50 &1994391240
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -962,5 +1036,5 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
