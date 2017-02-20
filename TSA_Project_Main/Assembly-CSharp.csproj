@@ -46,7 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Button.cs" />
      <Compile Include="Assets\CameraFollow.cs" />
+     <Compile Include="Assets\DialogueTemplate.cs" />
      <Compile Include="Assets\EnemyAI1.cs" />
      <Compile Include="Assets\EnemyAi.cs" />
      <Compile Include="Assets\NewBehaviourScript.cs" />

@@ -31,9 +31,13 @@ public class EnemyAI1 : MonoBehaviour {
 		Vector3 vectorToTarget = targetTransform.position - transform.position;
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-		transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
+		transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotationSpeed);
+		//transform.position += targetTransform * speed * Time.deltaTime; 
 
 		//move to player
+		targetTransform.position += targetTransform.forward * Time.deltaTime * speed;
+
+	
 		//Quaternion.LookRotation(target.position - targetTransform.position), rotationSpeed * Time.deltaTime);
 		//transform.Translate (target.position - targetTransform.position);
 
